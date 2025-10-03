@@ -16,3 +16,18 @@ jobs:
       - name: The job has failed
         if: ${{ failure() }}
         run: echo "failed"
+
+      - name: Set color
+        id: color-generator
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+
+      - name: Get color
+        run: echo "${{ step.color-generator.outputs.SELECTED_COLOR }}"
+
+      - name: Set a value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+
+      - run: |
+          echo "${{ env.action_state }}"
