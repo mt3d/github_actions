@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "first job!"
+      - run: "echo 'first job!'"
 
       - name: Checkout
         uses: actions/checkout@v5.0.0
