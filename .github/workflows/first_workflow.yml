@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: "echo 'first job!'"
+      - run: echo "first job!"
 
       - name: Checkout
         uses: actions/checkout@v5.0.0
@@ -22,9 +22,9 @@ jobs:
           tree
 
       - run: |
-          echo "Payload: ${{ toJson(github.event.client_payload) }}"
-          name: Payload
-          if: ${{ github.event_name == 'repository_dispatch' }}
+          echo "Payload: ${{ toJSON(github.event.client_payload) }}"
+        name: Payload
+        if: ${{ github.event_name == 'repository_dispatch' }}
           
   job_2:
     runs-on: ubuntu-latest
