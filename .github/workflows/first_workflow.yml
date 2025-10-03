@@ -12,5 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploying branch ${{ github.ref }}"
+      
       - name: The job has failed
         if: ${{ failure() }}
