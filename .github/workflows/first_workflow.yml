@@ -24,7 +24,7 @@ jobs:
       - run: |
           echo "Payload: ${{ toJson(github.event.client_payload) }}"
           name: Payload
-          if: ${{ github.event_name = 'repository_dispatch' }}
+          if: ${{ github.event_name == 'repository_dispatch' }}
           
   job_2:
     runs-on: ubuntu-latest
